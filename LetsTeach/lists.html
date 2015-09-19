@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LetsTeach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery-mobile-1.1.1.min.css" />
+<script src="jquery-1.7.1.min.js"></script>
+<script src="jquery-mobile-1.1.1.min.js"></script>
+<script src="angular.min.js"></script>
+<script src="module.js"></script>
+<script src="listCtrl.js"></script>
+</head>
+<body>
+	<div data-role="page" ng-app="myApp" ng-controller="listCtrl" >
+		<div data-role="header">
+			<h1>Welcome {{email}} - Tute Requests</h1>
+			<a href="home.html" data-icon="home" data-iconpos="notext"
+				data-direction="reverse">Home</a>
+		</div>
+		<div data-role="content">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="view.html" data-role="button" data-transition="turn">Teach</a>
+				<a href="lists.html" data-role="button" data-transition="turn">View
+					Requests</a>
+			</div>
+			<div style="padding-top: 3%">
+				<ul data-role="listview" data-filter="true">
+					<li><h3>Siksha</h3>
+						<p>
+							<strong>Maths 31-07-2015</strong>
+						</p>
+						<p>
+							<strong>Chennai</strong>
+						</p>
+						<div ng-show="list_0" class="ui-li-aside">Accepted</div>
+						<div data-role="controlgroup" data-type="horizontal"
+							class="ui-li-aside" ng-hide="list_0">
+							<a href="#" data-role="button" data-mini="true" data-icon="check"
+								data-theme="e" ng-click="accept(0)">Accept</a>
+						</div></li>
+					<li><h3>Youth of India</h3>
+						<p>
+							<strong>English 01-08-2015</strong>
+						</p>
+						<p>
+							<strong>Bangalore</strong>
+						</p>
+						<div ng-show="list_1" class="ui-li-aside">Accepted</div>
+						<div data-role="controlgroup" data-type="horizontal"
+							class="ui-li-aside" ng-hide="list_1">
+							<a href="#" data-role="button" data-mini="true" data-icon="check"
+								data-theme="e" ng-click="accept(1)">Accept</a>
+						</div></li>
+					<li><h3>Siksha</h3>
+						<p>
+							<strong>Physics 01-08-2015</strong>
+						</p>
+						<p>
+							<strong>Chennai</strong>
+						</p>
+						<div ng-show="list_2" class="ui-li-aside">Accepted</div>
+						<div data-role="controlgroup" data-type="horizontal"
+							class="ui-li-aside" ng-hide="list_2">
+							<a href="#" data-role="button" data-mini="true" data-icon="check"
+								data-theme="e" ng-click="accept(2)">Accept</a>
+						</div></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h1>LetsTeach &copy; 2015</h1>
+		</div>
+	</div>
+</body>
+</html>

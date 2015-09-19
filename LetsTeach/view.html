@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LetsTeach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery-mobile-1.1.1.min.css" />
+<script src="jquery-1.7.1.min.js"></script>
+<script src="jquery-mobile-1.1.1.min.js"></script>
+<script src="angular.min.js"></script>
+<script src="module.js"></script>
+<script src="viewCtrl.js"></script>
+</head>
+<body>
+	<div data-role="page" ng-app="myApp" ng-controller="viewCtrl">
+		<div data-role="header">
+			<h1>Welcome {{email}} - Teach For Sure</h1>
+			<a href="home.html" data-icon="home" data-iconpos="notext"
+				data-direction="reverse">Home</a>
+		</div>
+		<div data-role="content">
+			<div data-role="controlgroup" data-type="horizontal"
+				style="padding-bottom: 1%">
+				<a href="view.html" data-role="button" data-transition="turn">Teach</a>
+				<a href="lists.html" data-role="button" data-transition="turn">View
+					Requests</a>
+			</div>
+			<hr />
+			<div style="padding-top: 1%">
+				<table>
+					<tr>
+						<td>Subject:</td>
+						<td><select ng-model="subject">
+								<option value="0">Select</option>
+								<option value="1">Maths</option>
+								<option value="2">Physics</option>
+								<option value="3">Chemistry</option>
+								<option value="4">English</option>
+								<option value="5">Tamil</option>
+						</select> <span style="color: red;" ng-show="subRequired">Subject is
+								required.</span></td>
+					</tr>
+					<tr>
+						<td>Date:</td>
+						<td><input ng-model="date" type="date"> <span
+							style="color: red;" ng-show="dateRequired">{{dateErrMsg}}</span></td>
+					</tr>
+					<tr>
+						<td>Location:</td>
+						<td><select ng-model="location">
+								<option value="0">Select</option>
+								<option value="1">Chennai</option>
+								<option value="2">Bangalore</option>
+								<option value="3">Mysore</option>
+								<option value="4">Mangalore</option>
+						</select> <span style="color: red;" ng-show="locRequired">Location
+								is required.</span></td>
+					</tr>
+					<tr>
+						<td><a href="#" data-role="button" data-inline="true"
+							data-rel="dialog" data-transition="pop" data-icon="gear"
+							data-theme="e" ng-click="teach()">Submit</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h1>LetsTeach &copy; 2015</h1>
+		</div>
+	</div>
+</body>
+</html>

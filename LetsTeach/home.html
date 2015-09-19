@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LetsTeach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery-mobile-1.1.1.min.css" />
+<script src="jquery-1.7.1.min.js"></script>
+<script src="jquery-mobile-1.1.1.min.js"></script>
+<script src="angular.min.js"></script>
+<script src="module.js"></script>
+<script src="homeCtrl.js"></script>
+</head>
+<body>
+	<div data-role="page" ng-app="myApp" ng-controller="homeCtrl">
+		<div data-role="header">
+			<h1>Welcome {{email}} - Settings</h1>
+		</div>
+		<div data-role="content">
+			<table ng-hide="isNGO">
+				<tr>
+					<td>Subject</td>
+					<td><fieldset data-role="controlgroup" data-type="vertical">
+							<label><input type="checkbox" ng-click="toggle('Maths')"/>Maths</label>
+							<label><input type="checkbox" ng-click="toggle('Physics')"/>Physics</label>
+							<label><input type="checkbox" ng-click="toggle('Chemistry')"/>Chemistry</label>
+							<label><input type="checkbox" ng-click="toggle('English')"/>English</label>
+							<label><input type="checkbox" ng-click="toggle('Tamil')"/>Tamil</label>
+							<label><input type="checkbox" ng-click="toggle('Biology')"/>Biology</label>
+						</fieldset></td>
+				</tr>
+				<tr>
+					<td>Location</td>
+					<td><select ng-model="locations">
+							<option value="0">Select</option>
+							<option value="1">Chennai</option>
+							<option value="2">Bangalore</option>
+							<option value="3">Mysore</option>
+							<option value="4">Mangalore</option>
+							<option value="5">Cochi</option>
+							<option value="6">Hyderabad</option>
+							</fieldset></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Update" data-theme="e"
+						ng-click="add()" data-inline="true"
+							data-rel="dialog" data-transition="pop"></td>
+				</tr>
+			</table>
+
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h1>LetsTeach &copy; 2015</h1>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LetsTeach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery-mobile-1.1.1.min.css" />
+<script src="jquery-1.7.1.min.js"></script>
+<script src="jquery-mobile-1.1.1.min.js"></script>
+<script src="angular.min.js"></script>
+<script src="module.js"></script>
+<script src="registerCtrl.js"></script>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<h1>Register</h1>
+		</div>
+		<div data-role="content" ng-app="myApp" ng-controller="registerCtrl">
+			<form action="home.html">
+				<table>
+					<tr>
+						<td><b>Name:</b></td>
+						<td><input type="text" ng-model="name" placeholder="Name">
+							<span style="color: red;" ng-show="nameRequired">Name is
+								required.</span></td>
+					</tr>
+					<tr>
+						<td><b> Email:</b></td>
+						<td><input type="email" ng-model="email" placeholder="Email">
+							<span style="color: red;" ng-show="emailRequired">Email is
+								required.</span></td>
+					</tr>
+					<tr>
+						<td><b> Mobile:</b></td>
+						<td><input type="number" ng-model="mobile"
+							placeholder="10 Digit Mobile No."> <span
+							style="color: red;" ng-show="mobileRequired">Mobile is
+								required.</span></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" ng-model="isNGO">NGO</label></td>
+						<td><input type="button" value="Register"
+							ng-click="register()" data-theme="e"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h1>LetsTeach &copy; 2015</h1>
+		</div>
+	</div>
+</body>
+</html>
